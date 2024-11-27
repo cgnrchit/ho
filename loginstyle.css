@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+#loginForm {
+    width: 300px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+#loginForm h2 {
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #91ac8a;
+    outline: none;
+    font-size: 14px;
+    color: #252525;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+
+#loginForm input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #083d1c;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#loginForm input[type="submit"]:hover {
+    background-color: #0c5a2a;
+    box-shadow: 0 4px 10px rgba(15, 24, 15, 0.322);
+}
+#loginForm input[type="text"]:hover,
+#loginForm input[type="password"]:hover{
+    border-bottom: 2px solid #083d1c;
+}

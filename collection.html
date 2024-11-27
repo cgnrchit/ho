@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="shortcuticon" href="ico.png">   
+    <link rel="stylesheet" href="collstyle.css">
+    <title>Chitty Collection</title>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">CHENGANNUR CHITS</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="collection.html" class="active" ><img src="pencil.png" alt="" class="nav-icon">Collection</a></li>
+                <li><a href="report.html"><img src="report.png" alt="" class="nav-icon">Report</a></li>
+                <li><a href="chart.html"><img src="chart.png" alt="" class="nav-icon">Chart</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="action"><img src="logout.png" alt="" class="nav-icon">Logout</a>
+    </header>    
+
+    <h2 class="title">
+        <img src="pencil.png" alt="Pencil Icon" class="title-icon">Collection
+    </h2> 
+    
+<!--collection form --------------------------------->  
+    <div class="form-group">
+        <label for="branchName">Branch</label>
+        <select class="branchName" name="branchName" id="hiddenBranchName">
+            <option>anchal</option>            
+            <option>budhanoor</option>
+            <option>chengannur</option>
+            <option>cheriyanad</option>
+            <option>chettikulangara</option>
+            <option>chunakkara</option>
+            <option>chungapara</option>
+            <option>edappon</option>
+            <option>edathitta</option>
+            <option>elavumthitta</option>
+            <option>ennakkad</option>
+            <option>erumeli</option>
+            <option>kadapra</option>
+            <option>kakanad</option>
+            <option>kallumood</option>
+            <option>kangazha</option>
+            <option>karakkad</option>
+            <option>karunagappally</option>
+            <option>kodumon</option>
+            <option>kollakadavu</option>
+            <option>konnimarket</option>
+            <option>koodal</option>
+            <option>kotta</option>
+            <option>kottukadu</option>
+            <option>kulanada</option>
+            <option>kulikampalam</option>
+            <option>kunnamthanam</option>
+            <option>kunnikkuzhy</option>
+            <option>kurichy</option>
+            <option>mannar</option>
+            <option>mararithottam</option>
+            <option>nariyapuram</option>
+            <option>neduvathoor</option>
+            <option>omalloor</option>
+            <option>padanilam</option>
+            <option>pallickal</option>
+            <option>pallippad</option>
+            <option>pandalam</option>
+            <option>pandanad</option>
+            <option>pannikkarukadavu</option>
+            <option>parumala</option>
+            <option>pazhakulam</option>
+            <option>perumpetty</option>
+            <option>punthala</option>
+            <option>puramattom</option>
+            <option>puthenchanda</option>
+            <option>sooranad</option>
+            <option>tbroad</option>
+            <option>thattarambalam</option>
+            <option>thevalakara</option>
+            <option>thiruvalla</option>
+            <option>thrikkunnapuzha</option>
+            <option>ullanadu</option>
+            <option>vallakali</option>
+            <option>vazhuvadi</option>
+            <option>venmony</option>
+            <option>vettiyar</option>
+        </select>  
+    </div>  
+
+    <div class="wrapper">    
+    <form action="#" id="collectionForm">          
+              
+        <div class="content">
+            <div class="input-box">
+                <input type="hidden" id="id" />
+                <label for="deposit-date">Deposit Date</label>
+                <input type="date" placeholder="Deposit-date" id="depositDate" required>
+            </div>
+            <div class="input-box">
+                <label for="staff-name">Staff Name</label>
+                <input type="text" placeholder="Staff full Name" id="staffName" required>
+            </div>
+            <div class="input-box">
+                <label for="receipt-date">Receipt Date</label>
+                <input type="date" placeholder="Receipt-date" id="receiptDate" required>
+            </div>
+            <div class="input-box">
+                <label for="cust-name">Customer Name</label>
+                <input type="text" placeholder="Customer Full Name" id="custName" required>
+            </div>
+            <div class="input-box">
+                <label for="chit-number">Chitty Number</label>
+                <input type="text" placeholder="Chity Number" id="chitNumber" required>
+            </div>
+            <div class="input-box">
+                <label for="instalment">Instalment</label>
+                <input type="text" placeholder="Instalment Number" id="instalment" required>
+            </div>
+            <div class="input-box">
+                <label for="receipt-num">Receipt Number</label>
+                <input type="text" placeholder="Receipt Number" id="receiptNum" required>
+            </div>
+            <div class="input-box">
+                <label for="amount">Amount</label>
+                <input type="text" placeholder="Collection Amount" id="amount" required>
+            </div>
+            <div class="input-box">
+                <label for="commission">Commission</label>
+                <input type="text" placeholder="Commission" id="commission">
+            </div>
+            <div class="input-box">
+                <label for="bank-amount">Bank Amount</label>
+                <input type="text" placeholder="Amount Deposited In Bank" id="bankAmount" required>
+            </div>
+
+            <div class="btn-cnt">
+                <button type="submit" class="save" ><img src="save.svg" class="ion-icon">Save</button>
+                <button type="reset" class="clear"><img src="clear.svg" class="ion-icon">Clear</button>
+            </div>
+                
+    </form>        
+    
+<!--script ------------------------------------------------------------------------------>     
+    <script type="module" src="collec.js"></script>
+    <script src="brpic.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

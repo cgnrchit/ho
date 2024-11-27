@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chitty Collection</title>
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="shortcut icon" type="shortcuticon" href="ico.png">   
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />    
+       
+   
+</head>
+<body>
+    <div id="loginForm">  
+        <h2>Login</h2>  
+            <img src="user.png" alt="logo" class= "logo"> 
+            <h4>Wellcome to Chengannur Chits</h4>       
+        <form>                    
+            <input type="text" placeholder="User Name" id="username" name="username" required> 
+            <input type="password" placeholder="Password" id="password" name="password" required>
+            <input type="submit" value="Login">
+            
+        </form>
+    </div>
+
+    <script>
+        // Sample users data
+        const users = [
+        { username: 'admin', password:'admin',branch: 'admin'},
+        { username: 'anil', password:'anil123',branch: 'anil'},
+        { username: 'sajan', password:'saj@2024',branch: 'sajan'},
+       
+    ];
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Check for matching user
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (user) {
+        try {
+            // Store branch info in localStorage
+            localStorage.setItem('branchName', user.branch);
+
+            // Redirect to collection page
+            window.location.href = 'Collection.html';
+        } catch (error) {
+            console.error("Failed to save branch info in localStorage:", error);
+            alert("An error occurred while logging in. Please try again.");
+        }
+    } else {
+        alert('Invalid username or password');
+    }
+});
+    </script>
+    
+</body>
+</html>

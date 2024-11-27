@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reportstyle.css">
+    <link rel="shortcut icon" type="shortcuticon" href="ico.png">   
+    <title>Chitty Collection</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">CHENGANNUR CHITS</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="collection.html"><img src="pencil.png" alt="" class="nav-icon">Collection</a></li>
+                <li><a href="report.html" class="active" ><img src="report.png" alt="" class="nav-icon">Report</a></li>
+                <li><a href="chart.html"><img src="chart.png" alt="" class="nav-icon">Chart</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="action"><img src="logout.png" alt="" class="nav-icon">Logout</a>
+    </header>
+    
+    <h2 class="title">
+        <img src="report.png" alt="Pencil Icon" class="title-icon">Collection Report
+    </h2>
+    
+     <div class="filter-container">
+        <label for="fromDate">From</label>
+        <input type="date" id="fromDate">
+        <br>
+        <label for="toDate">To</label>
+        <input type="date" id="toDate">
+        
+
+  <!--droup list --------------------------------->      
+        <label for="searchBox">Branch</label>
+        <select class="branchName" name="branchName" id="hiddenBranchName">
+            <option>      </option>  
+            <option>anchal</option>            
+            <option>budhanoor</option>
+            <option>chengannur</option>
+            <option>cheriyanad</option>
+            <option>chettikulangara</option>
+            <option>chunakkara</option>
+            <option>chungapara</option>
+            <option>edappon</option>
+            <option>edathitta</option>
+            <option>elavumthitta</option>
+            <option>ennakkad</option>
+            <option>erumeli</option>
+            <option>kadapra</option>
+            <option>kakanad</option>
+            <option>kallumood</option>
+            <option>kangazha</option>
+            <option>karakkad</option>
+            <option>karunagappally</option>
+            <option>kodumon</option>
+            <option>kollakadavu</option>
+            <option>konnimarket</option>
+            <option>koodal</option>
+            <option>kotta</option>
+            <option>kottukadu</option>
+            <option>kulanada</option>
+            <option>kulikampalam</option>
+            <option>kunnamthanam</option>
+            <option>kunnikkuzhy</option>
+            <option>kurichy</option>
+            <option>mannar</option>
+            <option>mararithottam</option>
+            <option>nariyapuram</option>
+            <option>neduvathoor</option>
+            <option>omalloor</option>
+            <option>padanilam</option>
+            <option>pallickal</option>
+            <option>pallippad</option>
+            <option>pandalam</option>
+            <option>pandanad</option>
+            <option>pannikkarukadavu</option>
+            <option>parumala</option>
+            <option>pazhakulam</option>
+            <option>perumpetty</option>
+            <option>punthala</option>
+            <option>puramattom</option>
+            <option>puthenchanda</option>
+            <option>sooranad</option>
+            <option>tbroad</option>
+            <option>thattarambalam</option>
+            <option>thevalakara</option>
+            <option>thiruvalla</option>
+            <option>thrikkunnapuzha</option>
+            <option>ullanadu</option>
+            <option>vallakali</option>
+            <option>vazhuvadi</option>
+            <option>venmony</option>
+            <option>vettiyar</option>
+        </select>      
+<!--droup list --------------------------------->
+        <button class="display" onclick="filterTable()">Display</button>
+        <button class="clear" onclick="clearFilters()">Clear</button>
+        <button class="print" onclick="printTable()"><img src="print.svg" class="prt-icon">Print</button>
+        <button class="export" onclick="exportTableToExcel()"><img src="export.svg" class="prt-icon">Export</button>  
+    </div>
+    <br>
+    <form action="#" id="collectionForm"> </form>
+    <div class="table-container"> 
+<!--table head --------------------------------->     
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th style="width: 9%; text-align: center;">Branch</th>
+                    <th style="width: 8%; text-align: center;">Deposit Date</th>
+                    <th style="width: 175px; text-align: center;">Staff Name</th>
+                    <th style="width: 8%; text-align: center;">Receipt Date</th>
+                    <th style="width: 19%; text-align: center;">Customer Name</th>
+                    <th style="width: 7%; text-align: center;">Chitty Number</th>
+                    <th style="width: 7%; text-align: center;">Instalment</th>
+                    <th style="width: 7%; text-align: center;">Receipt Number</th>
+                    <th style="width: 7%; text-align: center;">Amount</th>
+                    <th style="width: 7%; text-align: center;">Commission</th>
+                    <th style="width: 7%; text-align: center;">Bank Amount</th>
+                    <th style="width: 5%; text-align: center;">Status</th>
+                    <th style="width: 5%; text-align: center;"></th>
+                </tr>
+            </thead>
+
+          <tbody id="tblBody"></tbody>
+         
+        </table>
+<!--table head --------------------------------->
+    </div>
+    
+
+
+<!--script --------------------------------->    
+    <script type="module" src="report.js"></script>
+    <script src="brpic.js"></script>    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
