@@ -1,4 +1,3 @@
-
 //  dd/mm/yyyy  Date 
 function parseDate(dateString) {
     const [day, month, year] = dateString.split('/').map(Number);
@@ -69,7 +68,6 @@ function clearFilters() {
 
 
 
-// printing--------------------------------------------------
 function printTable() {
     const table = document.getElementById("dataTable");
     const rows = table.getElementsByTagName("tr");
@@ -91,69 +89,70 @@ function printTable() {
     </thead>
     <tbody>`;
 
-// Iterate through each row and extract only selected columns
-for (let row of rows) {
-const cells = row.getElementsByTagName("td");
+    // Iterate through each row and include only visible rows
+    for (let row of rows) {
+        if (row.style.display !== "none") { // Include only rows that are not hidden
+            const cells = row.getElementsByTagName("td");
+            if (cells.length > 0) {
+                tableContent += `<tr>
+                    <td>${cells[0].textContent}</td> 
+                    <td>${cells[1].textContent}</td> 
+                    <td>${cells[2].textContent}</td>
+                    <td>${cells[3].textContent}</td>
+                    <td>${cells[4].textContent}</td>
+                    <td>${cells[5].textContent}</td>
+                    <td>${cells[6].textContent}</td>
+                    <td>${cells[7].textContent}</td>
+                    <td>${cells[8].textContent}</td>
+                    <td>${cells[9].textContent}</td>
+                    <td>${cells[10].textContent}</td>
+                </tr>`;
+            }
+        }
+    }
 
-if (cells.length > 0) {
-tableContent += `<tr>
-        <td>${cells[0].textContent}</td> 
-        <td>${cells[1].textContent}</td> 
-        <td>${cells[2].textContent}</td>
-        <td>${cells[3].textContent}</td>
-        <td>${cells[4].textContent}</td>
-        <td>${cells[5].textContent}</td>
-        <td>${cells[6].textContent}</td>
-        <td>${cells[7].textContent}</td>
-        <td>${cells[8].textContent}</td>
-        <td>${cells[9].textContent}</td>
-        <td>${cells[10].textContent}</td>
-        <td>${cells[11].textContent}</td>
-     </tr>`;
-}
+    tableContent += `</tbody></table>`;
+
+    // Open a new print window
+    const printWindow = window.open("", "_blank");
+    printWindow.document.write(`
+    <html>
+    <head>
+    <h2>Chengannur Chits</h2>
+    <h3>Collection Report</h3>
+    <style>                  
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid black;
+        text-transform: capitalize;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: rgb(40, 122, 19);                                            
+        color: white;
+    }
+    td {                       
+        padding: 5px;                        
+        text-align: left;
+        text-transform: capitalize; 
+    }
+    </style>
+    </head>
+    <body>
+    ${tableContent}
+    </body>
+    </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();
 }
 
-tableContent += `</tbody></table>`;
-
-// Open a new print window
-const printWindow = window.open("", "_blank");
-printWindow.document.write(`
-<html>
-<head>
-<h2>Chengannur Chits</h2>
-<h3>Collection Report</h3>
-<style>                  
-table {
-width: 100%;
-border-collapse: collapse;
-}
-table, th, td {
-border: 1px solid black;
-text-transform: capitalize;
-}
-th, td {
-padding: 8px;
-text-align: left;
-}
-th {
-background-color: rgb(40, 122, 19);                                            
-color: white;
-}
-td {                       
-padding: 5px;                        
-text-align: left;
-text-transform: capitalize; 
-}
-</style>
-</head>
-<body>
-${tableContent}
-</body>
-</html>
-`);
-printWindow.document.close();
-printWindow.print();
-}
 
 
 
@@ -217,3 +216,4 @@ function exportTableToExcel() {
   link.click();
   document.body.removeChild(link);
 }
+
